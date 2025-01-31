@@ -272,15 +272,11 @@ body {
 
 .floating-icons i {
     position: absolute;
-    color: rgba(255, 46, 151, 0.2);
-    font-size: 2rem;
-    filter: drop-shadow(0 0 5px rgba(255, 46, 151, 0.3));
-    transition: all 0.5s ease;
-    will-change: transform;
-    opacity: 0;
-    animation: 
-        float 6s ease-in-out infinite,
-        fadeInUp 1s ease forwards;
+    color: rgba(255, 255, 255, 0.18);
+    text-shadow: 0 0 15px rgba(255, 46, 151, 0.3);
+    font-size: clamp(1rem, 3vw, 2rem);
+    pointer-events: none;
+    animation: float 5s ease-in-out infinite;
 }
 
 /* Original float animation */
@@ -509,10 +505,12 @@ body {
 
 .background-icons i {
     position: absolute;
-    color: rgba(255, 46, 151, 0.2);
-    font-size: 2.5rem;
-    filter: drop-shadow(0 0 15px rgba(255, 46, 151, 0.3));
-    animation: float 6s ease-in-out infinite;
+    color: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 10px rgba(255, 46, 151, 0.2);
+    font-size: clamp(2rem, 5vw, 4rem);
+    pointer-events: none;
+    opacity: 0.15;
+    animation: backgroundFloat 20s linear infinite;
 }
 
 /* Fast floating icons with even more visibility */
@@ -704,4 +702,17 @@ body {
         width: 200px;
         margin: 0 auto;
     }
+}
+
+/* Optional: Add hover effect to make them even more visible when cursor is near */
+.hero:hover .floating-icons i {
+    color: rgba(255, 255, 255, 0.25);
+    text-shadow: 0 0 20px rgba(255, 46, 151, 0.4);
+    transition: all 0.3s ease;
+}
+
+.hero:hover .background-icons i {
+    color: rgba(255, 255, 255, 0.15);
+    text-shadow: 0 0 15px rgba(255, 46, 151, 0.25);
+    transition: all 0.3s ease;
 }
